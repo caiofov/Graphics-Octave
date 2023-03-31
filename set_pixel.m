@@ -1,11 +1,12 @@
-function m = set_pixel(image, x, y, value)
+function m = set_pixel(image, point, value)
     m = image;
+    p = point
 
-    x = max(1,x)
-    x = min(x, columns(m))
+    p.x = max(1,p.x)
+    p.x = min(p.x, columns(m))
 
-    y = max(1,y)
-    y = min(y, rows(m))
+    p.y = max(1,p.y)
+    p.y = min(p.y, rows(m))
     
-    m(y,x) = value;
+    m(p.y,p.x) = value;
 endfunction
