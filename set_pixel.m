@@ -2,11 +2,8 @@ function m = set_pixel(image, point, value)
     m = image;
     p = point
 
-    p.x = max(1,p.x)
-    p.x = min(p.x, columns(m))
-
-    p.y = max(1,p.y)
-    p.y = min(p.y, rows(m))
+    p.x = value_interval(p.x, 1, columns(m))
+    p.y = value_interval(p.x, 1, rows(m))
     
     m(p.y,p.x) = value;
 endfunction
